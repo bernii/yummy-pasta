@@ -1,11 +1,11 @@
 {
-  "name": "need-whiskey",
+  "name": "yummy-pasta",
   "version": "0.0.1",
-  "description": "A whiskey drinking program",
-  "homepage": "https://github.com/bernii/need-whiskey",
+  "description": "Pasta lovers stuff",
+  "homepage": "https://github.com/bernii/yummy-pasta",
   "author": "Bernard Kobos <berni@saucelabs.com> (https://github.com/bernii)",
   "keywords": [
-    "scotland.js",
+    "jsday 2013",
     "conference",
     "node"
   ],
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/bernii/need-whiskey.git"
+    "url": "git://github.com/bernii/yummy-pasta.git"
   },
   "engines": ["node"],
   "dependencies": {},
