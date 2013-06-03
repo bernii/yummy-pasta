@@ -35,12 +35,51 @@ module.exports = function(grunt) {
         'saucelabs-jasmine': {
             all: {
                 options: {
-                    urls: ["http://127.0.0.1:9999/test/SpecRunner.html"],
+                    urls: ["http://127.0.0.1:9999/test-jasmine/SpecRunner.html"],
                     tunnelTimeout: 5,
                     build: process.env.TRAVIS_JOB_ID,
                     concurrency: 3,
                     browsers: browsers,
                     testname: "pasta tests",
+                    tags: ["master"]
+                }
+            }
+        },
+        'saucelabs-qunit': {
+            all: {
+                options: {
+                    urls: ["http://127.0.0.1:9999/test-qunit/index.html"],
+                    tunnelTimeout: 5,
+                    build: process.env.TRAVIS_JOB_ID,
+                    concurrency: 3,
+                    browsers: browsers,
+                    testname: "qunit tests",
+                    tags: ["master"]
+                }
+            }
+        },
+        'saucelabs-mocha': {
+            all: {
+                options: {
+                    urls: ["http://127.0.0.1:9999/test-mocha/test/browser/opts.html"],
+                    tunnelTimeout: 5,
+                    build: process.env.TRAVIS_JOB_ID,
+                    concurrency: 3,
+                    browsers: browsers,
+                    testname: "mocha tests",
+                    tags: ["master"]
+                }
+            }
+        },
+        'saucelabs-yui': {
+            all: {
+                options: {
+                    urls: ["http://127.0.0.1:9999/test-yui/index.html"],
+                    tunnelTimeout: 5,
+                    build: process.env.TRAVIS_JOB_ID,
+                    concurrency: 3,
+                    browsers: browsers,
+                    testname: "yui tests",
                     tags: ["master"]
                 }
             }
@@ -54,5 +93,5 @@ module.exports = function(grunt) {
     }
 
     grunt.registerTask("dev", ["connect", "watch"]);
-    grunt.registerTask("test", ["connect", "saucelabs-jasmine"]);
+    grunt.registerTask("test", ["connect", "saucelabs-jasmine", "saucelabs-qunit", "saucelabs-mocha", "saucelabs-yui"]);
 };

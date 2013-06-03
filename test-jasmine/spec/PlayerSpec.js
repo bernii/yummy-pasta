@@ -3,7 +3,7 @@ describe("Player", function() {
   var song;
 
   beforeEach(function() {
-    waits(1000);
+    // waits(1000);
     player = new Player();
     song = new Song();
   });
